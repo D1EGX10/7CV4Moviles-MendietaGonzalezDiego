@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/entradadetexto2">
+
+    <fragment
+        android:id="@+id/botones3"
+        android:name="dmendieta2005.gmail.dmendieta2005.xmltarea2.botones"
+        android:label="fragment_botones"
+        tools:layout="@layout/fragment_botones" />
+    <fragment
+        android:id="@+id/entradadetexto2"
+        android:name="dmendieta2005.gmail.dmendieta2005.xmltarea2.entradadetexto"
+        android:label="fragment_entradadetexto"
+        tools:layout="@layout/fragment_entradadetexto" />
+    <fragment
+        android:id="@+id/estructura2"
+        android:name="dmendieta2005.gmail.dmendieta2005.xmltarea2.estructura"
+        android:label="fragment_estructura"
+        tools:layout="@layout/fragment_estructura" />
+    <fragment
+        android:id="@+id/listas2"
+        android:name="dmendieta2005.gmail.dmendieta2005.xmltarea2.listas"
+        android:label="fragment_listas"
+        tools:layout="@layout/fragment_listas" />
+    <fragment
+        android:id="@+id/retroalimentacion2"
+        android:name="dmendieta2005.gmail.dmendieta2005.xmltarea2.retroalimentacion"
+        android:label="fragment_retroalimentacion"
+        tools:layout="@layout/fragment_retroalimentacion" />
+    <fragment
+        android:id="@+id/seleccion2"
+        android:name="dmendieta2005.gmail.dmendieta2005.xmltarea2.seleccion"
+        android:label="fragment_seleccion"
+        tools:layout="@layout/fragment_seleccion" />
+</navigation>

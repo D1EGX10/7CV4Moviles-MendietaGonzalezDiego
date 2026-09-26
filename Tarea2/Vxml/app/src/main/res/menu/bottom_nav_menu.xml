@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/entradadetexto" android:title="Texto" />
+    <item android:id="@+id/botones" android:title="Botones" />
+    <item android:id="@+id/seleccion" android:title="Selección" />
+    <item android:id="@+id/listas" android:title="Listas" />
+    <item android:id="@+id/retroalimentacion" android:title="Feedback" />
+    <item android:id="@+id/estructura" android:title="Layouts" />
+</menu>
