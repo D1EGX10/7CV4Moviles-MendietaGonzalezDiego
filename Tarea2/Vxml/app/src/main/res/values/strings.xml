@@ -2,4 +2,29 @@
     <string name="app_name">XmlTarea2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_campo_simple">1. Campo simple con etiqueta</string>
+    <string name="desc_campo_simple">Permite capturar texto corto. La etiqueta flota al seleccionarlo.</string>
+    <string name="hint_nombre">Nombre completo</string>
+
+    <string name="titulo_campo_password">2. Contraseña con toggle</string>
+    <string name="desc_campo_password">Oculta los caracteres pero incluye un ícono para revelarlos.</string>
+    <string name="hint_password">Contraseña</string>
+
+    <string name="titulo_campo_teclados">3. Distintos tipos de teclado</string>
+    <string name="desc_campo_teclados">Muestra teclados específicos para correo y teléfono.</string>
+    <string name="hint_correo">Correo electrónico</string>
+    <string name="hint_telefono">Número de teléfono</string>
+
+    <string name="titulo_campo_multilinea">4. Campo multilínea</string>
+    <string name="desc_campo_multilinea">Permite escribir párrafos largos expandiendo su altura.</string>
+    <string name="hint_comentarios">Comentarios</string>
+
+    <string name="titulo_campo_desplegable">5. Menú desplegable</string>
+    <string name="desc_campo_desplegable">Muestra opciones al tocar el campo. Evita errores de escritura.</string>
+    <string name="hint_opciones">Selecciona una opción</string>
+
+    <string name="titulo_campo_validacion">6. Validación y error</string>
+    <string name="desc_campo_validacion">Muestra un estado en rojo si el dato no cumple las reglas.</string>
+    <string name="hint_codigo">Código (Mínimo 5 letras)</string>
+    <string name="error_codigo">Debe tener al menos 5 caracteres</string>
 </resources>
