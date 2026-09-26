@@ -55,7 +55,7 @@
     <string name="btn_cargando">Cargando...</string>
     <string name="mensaje_toast_boton">Botón pulsado: %1$s</string>
 
-    //Para la parte 3
+    //Para la parte 3 Seleccion:
     <string name="titulo_checkbox">1. Casillas de verificación</string>
     <string name="desc_checkbox">Permiten seleccionar múltiples opciones. Soportan un estado parcial o indeterminado.</string>
     <string name="chk_normal">Opción normal</string>
@@ -86,4 +86,15 @@
     <string name="chip_1">Filtro 1</string>
     <string name="chip_2">Filtro 2</string>
     <string name="chip_3">Filtro 3</string>
+
+    //Parte 4
+    <string name="titulo_lista_compleja">1. Lista vertical con encabezados</string>
+    <string name="desc_lista_compleja">Incluye swipe-to-delete, pull-to-refresh, clic para detalle y estado vacío.</string>
+    <string name="titulo_grid">2. Cuadrícula de elementos</string>
+    <string name="desc_grid">Muestra elementos distribuidos en múltiples columnas.</string>
+    <string name="titulo_tabs">3. Pestañas deslizables</string>
+    <string name="desc_tabs">Pestañas con contenido que se desliza horizontalmente.</string>
+    <string name="mensaje_vacio">Lista vacía. Arrastra hacia abajo para recargar.</string>
+    <string name="item_eliminado">Elemento eliminado</string>
+    <string name="item_clic">Seleccionaste: %1$s</string>
 </resources>
