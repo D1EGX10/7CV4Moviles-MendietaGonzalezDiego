@@ -54,4 +54,36 @@
     <string name="btn_carga">Guardar</string>
     <string name="btn_cargando">Cargando...</string>
     <string name="mensaje_toast_boton">Botón pulsado: %1$s</string>
+
+    //Para la parte 3
+    <string name="titulo_checkbox">1. Casillas de verificación</string>
+    <string name="desc_checkbox">Permiten seleccionar múltiples opciones. Soportan un estado parcial o indeterminado.</string>
+    <string name="chk_normal">Opción normal</string>
+    <string name="chk_indeterminado">Estado indeterminado</string>
+
+    <string name="titulo_radios">2. Botones de radio</string>
+    <string name="desc_radios">Permiten seleccionar una sola opción dentro de un grupo excluyente.</string>
+    <string name="radio_1">Opción A</string>
+    <string name="radio_2">Opción B</string>
+
+    <string name="titulo_switch">3. Interruptor (Switch)</string>
+    <string name="desc_switch">Activa o desactiva una configuración al instante.</string>
+    <string name="switch_texto">Activar notificaciones</string>
+
+    <string name="titulo_sliders">4. Deslizadores (Sliders)</string>
+    <string name="desc_sliders">Permiten elegir un valor único o un rango arrastrando el control.</string>
+
+    <string name="titulo_spinner">5. Lista de selección (Spinner)</string>
+    <string name="desc_spinner">Componente nativo compacto para elegir una opción de una lista.</string>
+
+    <string name="titulo_pickers">6. Selectores de fecha y hora</string>
+    <string name="desc_pickers">Abren diálogos del sistema para elegir un momento exacto.</string>
+    <string name="btn_fecha">Elegir fecha</string>
+    <string name="btn_hora">Elegir hora</string>
+
+    <string name="titulo_chips">7. Chips de filtro</string>
+    <string name="desc_chips">Elementos compactos que actúan como etiquetas seleccionables interactivas.</string>
+    <string name="chip_1">Filtro 1</string>
+    <string name="chip_2">Filtro 2</string>
+    <string name="chip_3">Filtro 3</string>
 </resources>
