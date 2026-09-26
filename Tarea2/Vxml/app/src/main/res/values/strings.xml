@@ -144,4 +144,38 @@
     <string name="sec5_tarjeta_contenido">Las tarjetas agrupan información relacionada y le dan jerarquía visual al contenido.</string>
     <string name="sec5_badge_texto">12</string>
     <string name="sec5_separador_texto">Separador con texto</string>
+
+    //Parte 6 estructura:
+    <string name="sec6_titulo">Contenedores y Estructura</string>
+
+    <string name="sec6_fila_titulo">Distribución en fila</string>
+    <string name="sec6_fila_descripcion">Organiza los elementos uno al lado del otro de forma horizontal.</string>
+    <string name="sec6_fila_uno">Uno</string>
+    <string name="sec6_fila_dos">Dos</string>
+    <string name="sec6_fila_tres">Tres</string>
+
+    <string name="sec6_columna_titulo">Distribución en columna</string>
+    <string name="sec6_columna_descripcion">Organiza los elementos uno debajo del otro de forma vertical.</string>
+    <string name="sec6_columna_uno">Primer elemento</string>
+    <string name="sec6_columna_dos">Segundo elemento</string>
+    <string name="sec6_columna_tres">Tercer elemento</string>
+
+    <string name="sec6_superposicion_titulo">Distribución superpuesta</string>
+    <string name="sec6_superposicion_descripcion">Coloca un elemento encima de otro usando un contenedor de superposición.</string>
+    <string name="sec6_superposicion_fondo">Capa de fondo</string>
+    <string name="sec6_superposicion_frente">Capa al frente</string>
+
+    <string name="sec6_scroll_titulo">Contenedor con desplazamiento vertical</string>
+    <string name="sec6_scroll_descripcion">Permite recorrer contenido más largo que la pantalla con un desplazamiento vertical.</string>
+    <string name="sec6_scroll_elemento">Elemento desplazable número %1$d</string>
+
+    <string name="sec6_pesos_titulo">Distribución con pesos proporcionales</string>
+    <string name="sec6_pesos_descripcion">Reparte el espacio disponible entre los elementos según su peso.</string>
+    <string name="sec6_peso_uno">Peso 1</string>
+    <string name="sec6_peso_dos">Peso 2</string>
+    <string name="sec6_peso_tres">Peso 3</string>
+
+    <string name="sec6_accion_ayuda">Ayuda</string>
+    <string name="sec6_accion_ajustes">Ajustes</string>
+    <string name="sec6_accion_compartir">Compartir</string>
 </resources>

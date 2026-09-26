@@ -1,59 +1,62 @@
 package dmendieta2005.gmail.dmendieta2005.xmltarea2
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [estructura.newInstance] factory method to
- * create an instance of this fragment.
- */
-class estructura : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+class ContenedoresFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        contenedor: ViewGroup?,
+        estado: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_estructura, container, false)
+        return inflater.inflate(R.layout.fragment_estructura, contenedor, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment estructura.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            estructura().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(vista: View, estado: Bundle?) {
+        super.onViewCreated(vista, estado)
+
+        val botonAyuda = vista.findViewById<ImageButton>(R.id.barra_ayuda)
+        val botonAjustes = vista.findViewById<ImageButton>(R.id.barra_ajustes)
+        val botonCompartir = vista.findViewById<ImageButton>(R.id.barra_compartir)
+
+        botonAyuda.setOnClickListener {
+            Toast.makeText(requireContext(), "Ayuda", Toast.LENGTH_SHORT).show()
+        }
+
+        botonAjustes.setOnClickListener {
+            Toast.makeText(requireContext(), "Ajustes", Toast.LENGTH_SHORT).show()
+        }
+
+        botonCompartir.setOnClickListener {
+            Toast.makeText(requireContext(), "Compartir", Toast.LENGTH_SHORT).show()
+        }
+
+        val listaDesplazable = vista.findViewById<LinearLayout>(R.id.lista_desplazable)
+
+        for (numero in 1..25) {
+            val elemento = TextView(requireContext())
+            elemento.text = getString(R.string.sec6_scroll_elemento, numero)
+            elemento.textSize = 14f
+            elemento.setPadding(16, 24, 16, 24)
+
+            val separador = View(requireContext())
+            val parametros = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                2
+            )
+            separador.layoutParams = parametros
+            separador.setBackgroundColor(0x22000000)
+
+            listaDesplazable.addView(elemento)
+            listaDesplazable.addView(separador)
+        }
     }
 }
