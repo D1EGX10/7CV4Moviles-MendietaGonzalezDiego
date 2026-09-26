@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="color_primario">#6750A4</color>
+    <color name="color_primario_contraste">#FFFFFF</color>
+    <color name="color_secundario">#625B71</color>
+    <color name="color_secundario_contraste">#FFFFFF</color>
+    <color name="color_terciario">#7D5260</color>
+    <color name="color_terciario_contraste">#FFFFFF</color>
+    <color name="color_fondo">#FFFBFE</color>
+    <color name="color_superficie">#FFFBFE</color>
+    <color name="color_superficie_variante">#E7E0EC</color>
+    <color name="color_texto_principal">#1C1B1F</color>
+    <color name="color_texto_secundario">#49454F</color>
 </resources>

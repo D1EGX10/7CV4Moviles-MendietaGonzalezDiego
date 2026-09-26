@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sec6_fila_descripcion"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
                 android:paddingBottom="8dp" />
 
             <LinearLayout
@@ -89,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sec6_columna_descripcion"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
                 android:paddingBottom="8dp" />
 
             <LinearLayout
@@ -144,6 +146,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sec6_superposicion_descripcion"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
                 android:paddingBottom="8dp" />
 
             <include layout="@layout/item_contenedor_superpuesto" />
@@ -166,6 +169,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sec6_pesos_descripcion"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
                 android:paddingBottom="8dp" />
 
             <LinearLayout
@@ -222,6 +226,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sec6_scroll_descripcion"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
                 android:paddingBottom="8dp" />
 
             <LinearLayout

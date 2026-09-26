@@ -16,7 +16,14 @@
             android:layout_height="wrap_content"
             android:text="@string/sec5_textos_titulo"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_textos_descripcion"
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
             android:paddingBottom="8dp" />
 
         <TextView
@@ -84,7 +91,14 @@
             android:layout_height="wrap_content"
             android:text="@string/sec5_imagenes_titulo"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_imagenes_descripcion"
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
             android:paddingBottom="8dp" />
 
         <TextView
@@ -130,7 +144,14 @@
             android:layout_height="wrap_content"
             android:text="@string/sec5_progreso_titulo"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_progreso_descripcion"
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
             android:paddingBottom="8dp" />
 
         <TextView
@@ -234,8 +255,23 @@
             android:layout_height="wrap_content"
             android:text="@string/sec5_mensajes_titulo"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_mensajes_descripcion"
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
             android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_descripcion_toast"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingTop="4dp" />
 
         <Button
             android:id="@+id/btn_toast"
@@ -243,25 +279,46 @@
             android:layout_height="wrap_content"
             android:text="@string/sec5_btn_toast" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_descripcion_snackbar"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingTop="8dp" />
+
         <Button
             android:id="@+id/btn_snackbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@string/sec5_btn_snackbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_descripcion_dialogo"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingTop="8dp" />
 
         <Button
             android:id="@+id/btn_dialogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@string/sec5_btn_dialogo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_descripcion_bottom_sheet"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:paddingTop="8dp" />
 
         <Button
             android:id="@+id/btn_bottom_sheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@string/sec5_btn_bottom_sheet" />
 
         <View
@@ -273,9 +330,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tarjeta, separador y badge"
+            android:text="@string/sec5_tarjeta_seccion_titulo"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sec5_tarjeta_descripcion"
+            android:textSize="14sp"
+            android:textColor="?android:attr/textColorSecondary"
             android:paddingBottom="8dp" />
 
         <include layout="@layout/item_tarjeta_informacion" />

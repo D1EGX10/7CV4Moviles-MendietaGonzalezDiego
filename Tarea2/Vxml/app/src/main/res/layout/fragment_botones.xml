@@ -70,6 +70,7 @@
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/desc_boton_solo_icono"
                 app:icon="@android:drawable/ic_menu_send"
                 android:layout_marginEnd="8dp" />
             <com.google.android.material.button.MaterialButton

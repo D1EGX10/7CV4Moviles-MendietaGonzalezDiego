@@ -54,6 +54,7 @@
     <string name="btn_carga">Guardar</string>
     <string name="btn_cargando">Cargando...</string>
     <string name="mensaje_toast_boton">Botón pulsado: %1$s</string>
+    <string name="desc_boton_solo_icono">Botón con ícono de enviar</string>
 
     //Para la parte 3 Seleccion:
     <string name="titulo_checkbox">1. Casillas de verificación</string>
@@ -102,6 +103,7 @@
     <string name="sec5_titulo">Información y Retroalimentación</string>
 
     <string name="sec5_textos_titulo">Textos y tipografía</string>
+    <string name="sec5_textos_descripcion">Los textos permiten comunicar información al usuario. Su tamaño, peso y color definen la jerarquía visual del contenido.</string>
     <string name="sec5_texto_display">Display: título principal</string>
     <string name="sec5_texto_headline">Headline: encabezado de sección</string>
     <string name="sec5_texto_title">Title: título de tarjeta</string>
@@ -112,11 +114,13 @@
     <string name="sec5_texto_color">Texto con color de énfasis</string>
 
     <string name="sec5_imagenes_titulo">Imágenes y escalado</string>
+    <string name="sec5_imagenes_descripcion">Las imágenes refuerzan el contenido visual. El modo de escalado determina cómo se adaptan al espacio disponible.</string>
     <string name="sec5_imagen_local">Imagen local (fitCenter)</string>
     <string name="sec5_imagen_url">Imagen desde URL (centerCrop)</string>
     <string name="sec5_imagen_error">No se pudo cargar la imagen</string>
 
     <string name="sec5_progreso_titulo">Indicadores de progreso</string>
+    <string name="sec5_progreso_descripcion">Los indicadores de progreso muestran el avance de una tarea. Pueden ser determinados, cuando se conoce el porcentaje, o indeterminados, cuando solo indican actividad.</string>
     <string name="sec5_progreso_lineal_det">Progreso lineal determinado</string>
     <string name="sec5_progreso_lineal_indet">Progreso lineal indeterminado</string>
     <string name="sec5_progreso_circular_det">Progreso circular determinado</string>
@@ -124,6 +128,11 @@
     <string name="sec5_progreso_boton">Simular avance</string>
 
     <string name="sec5_mensajes_titulo">Mensajes emergentes</string>
+    <string name="sec5_mensajes_descripcion">Los mensajes emergentes comunican eventos al usuario sin interrumpir su flujo de trabajo. Cada tipo tiene un nivel distinto de urgencia.</string>
+    <string name="sec5_descripcion_toast">Toast: mensaje breve que aparece unos segundos y desaparece solo. Se usa para confirmaciones rápidas.</string>
+    <string name="sec5_descripcion_snackbar">Snackbar: mensaje con una acción opcional. Se usa cuando el usuario puede deshacer o responder algo.</string>
+    <string name="sec5_descripcion_dialogo">Diálogo: ventana modal que interrumpe al usuario para pedir una confirmación importante.</string>
+    <string name="sec5_descripcion_bottom_sheet">Bottom sheet: panel que sube desde abajo y ofrece opciones relacionadas con la pantalla actual.</string>
     <string name="sec5_btn_toast">Mostrar Toast</string>
     <string name="sec5_btn_snackbar">Mostrar Snackbar</string>
     <string name="sec5_btn_dialogo">Mostrar diálogo</string>
@@ -140,6 +149,8 @@
     <string name="sec5_bottom_sheet_opcion2">Guardar en favoritos</string>
     <string name="sec5_bottom_sheet_opcion3">Reportar</string>
 
+    <string name="sec5_tarjeta_seccion_titulo">Tarjeta, separador y badge</string>
+    <string name="sec5_tarjeta_descripcion">Las tarjetas agrupan información relacionada y le dan jerarquía visual al contenido. Los separadores dividen secciones y los badges resaltan valores numéricos.</string>
     <string name="sec5_tarjeta_titulo">Tarjeta de ejemplo</string>
     <string name="sec5_tarjeta_contenido">Las tarjetas agrupan información relacionada y le dan jerarquía visual al contenido.</string>
     <string name="sec5_badge_texto">12</string>
@@ -147,33 +158,34 @@
 
     //Parte 6 estructura:
     <string name="sec6_titulo">Contenedores y Estructura</string>
+    <string name="sec6_barra_descripcion">La barra superior muestra el título de la sección y acciones rápidas como ayuda, ajustes o compartir.</string>
 
     <string name="sec6_fila_titulo">Distribución en fila</string>
-    <string name="sec6_fila_descripcion">Organiza los elementos uno al lado del otro de forma horizontal.</string>
+    <string name="sec6_fila_descripcion">La distribución en fila organiza los elementos uno al lado del otro. Se usa cuando los componentes deben compararse o alinearse horizontalmente.</string>
     <string name="sec6_fila_uno">Uno</string>
     <string name="sec6_fila_dos">Dos</string>
     <string name="sec6_fila_tres">Tres</string>
 
     <string name="sec6_columna_titulo">Distribución en columna</string>
-    <string name="sec6_columna_descripcion">Organiza los elementos uno debajo del otro de forma vertical.</string>
+    <string name="sec6_columna_descripcion">La distribución en columna organiza los elementos uno debajo del otro. Es la forma más común de agrupar contenido en una pantalla.</string>
     <string name="sec6_columna_uno">Primer elemento</string>
     <string name="sec6_columna_dos">Segundo elemento</string>
     <string name="sec6_columna_tres">Tercer elemento</string>
 
     <string name="sec6_superposicion_titulo">Distribución superpuesta</string>
-    <string name="sec6_superposicion_descripcion">Coloca un elemento encima de otro usando un contenedor de superposición.</string>
+    <string name="sec6_superposicion_descripcion">La superposición coloca un elemento encima de otro dentro del mismo espacio. Se usa para etiquetas sobre imágenes o capas decorativas.</string>
     <string name="sec6_superposicion_fondo">Capa de fondo</string>
     <string name="sec6_superposicion_frente">Capa al frente</string>
 
-    <string name="sec6_scroll_titulo">Contenedor con desplazamiento vertical</string>
-    <string name="sec6_scroll_descripcion">Permite recorrer contenido más largo que la pantalla con un desplazamiento vertical.</string>
-    <string name="sec6_scroll_elemento">Elemento desplazable número %1$d</string>
-
     <string name="sec6_pesos_titulo">Distribución con pesos proporcionales</string>
-    <string name="sec6_pesos_descripcion">Reparte el espacio disponible entre los elementos según su peso.</string>
+    <string name="sec6_pesos_descripcion">Los pesos proporcionales reparten el espacio disponible entre los elementos según su importancia. Un peso mayor ocupa más espacio.</string>
     <string name="sec6_peso_uno">Peso 1</string>
     <string name="sec6_peso_dos">Peso 2</string>
     <string name="sec6_peso_tres">Peso 3</string>
+
+    <string name="sec6_scroll_titulo">Contenedor con desplazamiento vertical</string>
+    <string name="sec6_scroll_descripcion">El contenedor con desplazamiento vertical permite recorrer contenido más largo que la pantalla sin salir de ella.</string>
+    <string name="sec6_scroll_elemento">Elemento desplazable número %1$d</string>
 
     <string name="sec6_accion_ayuda">Ayuda</string>
     <string name="sec6_accion_ajustes">Ajustes</string>
