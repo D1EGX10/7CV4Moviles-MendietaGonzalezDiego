@@ -1,59 +1,67 @@
 package dmendieta2005.gmail.dmendieta2005.xmltarea2
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [botones.newInstance] factory method to
- * create an instance of this fragment.
- */
 class botones : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_botones, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_botones, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment botones.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            botones().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        val btnRelleno = view.findViewById<MaterialButton>(R.id.btnRelleno)
+        val btnContorno = view.findViewById<MaterialButton>(R.id.btnContorno)
+        val btnTexto = view.findViewById<MaterialButton>(R.id.btnTexto)
+        val btnSoloIcono = view.findViewById<MaterialButton>(R.id.btnSoloIcono)
+        val btnIconoTexto = view.findViewById<MaterialButton>(R.id.btnIconoTexto)
+        val fabNormal = view.findViewById<FloatingActionButton>(R.id.fabNormal)
+        val fabExtendido = view.findViewById<ExtendedFloatingActionButton>(R.id.fabExtendido)
+        val btnCarga = view.findViewById<MaterialButton>(R.id.btnCarga)
+
+        val mensajeBase = getString(R.string.mensaje_toast_boton)
+
+        val clickListener = View.OnClickListener { v ->
+            val nombreBoton = when (v.id) {
+                R.id.btnRelleno -> getString(R.string.btn_relleno)
+                R.id.btnContorno -> getString(R.string.btn_contorno)
+                R.id.btnTexto -> getString(R.string.btn_texto)
+                R.id.btnSoloIcono -> "Solo ícono"
+                R.id.btnIconoTexto -> getString(R.string.btn_icono_texto)
+                R.id.fabNormal -> "FAB Normal"
+                R.id.fabExtendido -> getString(R.string.btn_fab_extendido)
+                else -> "Botón"
             }
+            Toast.makeText(requireContext(), String.format(mensajeBase, nombreBoton), Toast.LENGTH_SHORT).show()
+        }
+
+        btnRelleno.setOnClickListener(clickListener)
+        btnContorno.setOnClickListener(clickListener)
+        btnTexto.setOnClickListener(clickListener)
+        btnSoloIcono.setOnClickListener(clickListener)
+        btnIconoTexto.setOnClickListener(clickListener)
+        fabNormal.setOnClickListener(clickListener)
+        fabExtendido.setOnClickListener(clickListener)
+
+        btnCarga.setOnClickListener {
+            btnCarga.text = getString(R.string.btn_cargando)
+            btnCarga.isEnabled = false
+            Toast.makeText(requireContext(), String.format(mensajeBase, getString(R.string.btn_carga)), Toast.LENGTH_SHORT).show()
+
+            view.postDelayed({
+                btnCarga.text = getString(R.string.btn_carga)
+                btnCarga.isEnabled = true
+            }, 2000)
+        }
+
+        return view
     }
 }

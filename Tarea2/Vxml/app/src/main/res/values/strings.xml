@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">XmlTarea2</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    //Esto es para la parte1, el texto:
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="titulo_campo_simple">1. Campo simple con etiqueta</string>
     <string name="desc_campo_simple">Permite capturar texto corto. La etiqueta flota al seleccionarlo.</string>
@@ -27,4 +27,31 @@
     <string name="desc_campo_validacion">Muestra un estado en rojo si el dato no cumple las reglas.</string>
     <string name="hint_codigo">Código (Mínimo 5 letras)</string>
     <string name="error_codigo">Debe tener al menos 5 caracteres</string>
+
+    //Esto es para la parte2, los botones:
+    <string name="titulo_botones_basicos">1. Botones básicos</string>
+    <string name="desc_botones_basicos">Diferentes niveles de énfasis: relleno (alto), contorno (medio) y texto (bajo).</string>
+    <string name="btn_relleno">Relleno</string>
+    <string name="btn_contorno">Contorno</string>
+    <string name="btn_texto">Texto</string>
+
+    <string name="titulo_botones_icono">2. Botones con ícono</string>
+    <string name="desc_botones_icono">Ayudan a comunicar la acción visualmente.</string>
+    <string name="btn_icono_texto">Enviar</string>
+
+    <string name="titulo_fab">3. Botones flotantes (FAB)</string>
+    <string name="desc_fab">Se usan para la acción principal de una pantalla.</string>
+    <string name="btn_fab_extendido">Crear nuevo</string>
+
+    <string name="titulo_toggle">4. Botones de alternancia</string>
+    <string name="desc_toggle">Permiten seleccionar una o varias opciones de un grupo.</string>
+    <string name="btn_opcion_1">Opción 1</string>
+    <string name="btn_opcion_2">Opción 2</string>
+
+    <string name="titulo_botones_estado">5. Estados: Deshabilitado y Carga</string>
+    <string name="desc_botones_estado">Muestran que una acción no está disponible o está procesándose.</string>
+    <string name="btn_deshabilitado">Deshabilitado</string>
+    <string name="btn_carga">Guardar</string>
+    <string name="btn_cargando">Cargando...</string>
+    <string name="mensaje_toast_boton">Botón pulsado: %1$s</string>
 </resources>
