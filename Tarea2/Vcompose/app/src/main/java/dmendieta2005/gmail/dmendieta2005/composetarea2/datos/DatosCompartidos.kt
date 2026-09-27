@@ -14,7 +14,7 @@ object DatosCompartidos {
 
     val tamanoContenedor = mutableStateOf(80)
 
-    val colorContenedor = mutableStateOf(0xFF6750A4)
+    val colorContenedor = mutableStateOf(0xFF6750A4L)
 
     val elementoSeleccionado = mutableStateOf("")
 
