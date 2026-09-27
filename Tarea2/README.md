@@ -125,7 +125,7 @@ El APK...
 Así se ve la pantalla de inicio:
 
 ![Inicio 1](docs/Compose/WhatsApp%20Image%202026-09-27%20at%2014.44.19.jpeg)
-![Inicio 2](docs/Compose/WhatsApp%20Image%202026-09-27%20at%2014.44.19(1).jpeg)
+![Inicio 2](docs/Compose/WhatsApp%20Image%202026-09-27%20at%2014.44.19 (1).jpeg)
 
 #### Sección 1: Entrada de texto
 
