@@ -124,63 +124,63 @@ El APK...
 
 Así se ve la pantalla de inicio:
 
-![Inicio 1](docs/Compose/WhatsApp%20Image%202026-09-27%20at%2014.44.19.jpeg)
-![Inicio 2](docs/Compose/WhatsApp%20Image%202026-09-27%20at%2014.44.19 (1).jpeg)
+![Inicio 1](docs/Compose/inicio_1.jpeg)
+![Inicio 2](docs/Compose/inicio_2.jpeg)
 
 #### Sección 1: Entrada de texto
 
 Así se ve la sección 1:
 
-![Sección 1 - imagen 1](docs/Compose/Seccion1/WhatsApp%20Image%202026-09-27%20at%2013.47.44.jpeg)
-![Sección 1 - imagen 2](docs/Compose/Seccion1/WhatsApp%20Image%202026-09-27%20at%2013.47.44%281%29.jpeg)
-![Sección 1 - imagen 3](docs/Compose/Seccion1/WhatsApp%20Image%202026-09-27%20at%2013.47.44%282%29.jpeg)
+![Sección 1 - imagen 1](docs/Compose/Seccion1/imagen_1.jpeg)
+![Sección 1 - imagen 2](docs/Compose/Seccion1/imagen_2.jpeg)
+![Sección 1 - imagen 3](docs/Compose/Seccion1/imagen_3.jpeg)
 
 #### Sección 2: Botones y acciones
 
 Así se ve la sección 2:
 
-![Sección 2 - imagen 1](docs/Compose/Seccion2/WhatsApp%20Image%202026-09-27%20at%2013.47.45.jpeg)
-![Sección 2 - imagen 2](docs/Compose/Seccion2/WhatsApp%20Image%202026-09-27%20at%2013.47.45%281%29.jpeg)
-![Sección 2 - imagen 3](docs/Compose/Seccion2/WhatsApp%20Image%202026-09-27%20at%2013.47.45%282%29.jpeg)
+![Sección 2 - imagen 1](docs/Compose/Seccion2/imagen_1.jpeg)
+![Sección 2 - imagen 2](docs/Compose/Seccion2/imagen_2.jpeg)
+![Sección 2 - imagen 3](docs/Compose/Seccion2/imagen_3.jpeg)
 
 #### Sección 3: Elementos de selección
 
 Así se ve la sección 3:
 
-![Sección 3 - imagen 1](docs/Compose/Seccion3/WhatsApp%20Image%202026-09-27%20at%2014.30.30.jpeg)
-![Sección 3 - imagen 2](docs/Compose/Seccion3/WhatsApp%20Image%202026-09-27%20at%2014.30.30%281%29.jpeg)
-![Sección 3 - imagen 3](docs/Compose/Seccion3/WhatsApp%20Image%202026-09-27%20at%2014.30.30%282%29.jpeg)
-![Sección 3 - imagen 4](docs/Compose/Seccion3/WhatsApp%20Image%202026-09-27%20at%2014.30.30%283%29.jpeg)
+![Sección 3 - imagen 1](docs/Compose/Seccion3/imagen_1.jpeg)
+![Sección 3 - imagen 2](docs/Compose/Seccion3/imagen_2.jpeg)
+![Sección 3 - imagen 3](docs/Compose/Seccion3/imagen_3.jpeg)
+![Sección 3 - imagen 4](docs/Compose/Seccion3/imagen_4.jpeg)
 
 #### Sección 4: Listas y colecciones
 
 Así se ve la sección 4:
 
-![Sección 4 - imagen 1](docs/Compose/Seccion4/WhatsApp%20Image%202026-09-27%20at%2014.30.46.jpeg)
-![Sección 4 - imagen 2](docs/Compose/Seccion4/WhatsApp%20Image%202026-09-27%20at%2014.30.47.jpeg)
-![Sección 4 - imagen 3](docs/Compose/Seccion4/WhatsApp%20Image%202026-09-27%20at%2014.30.47%281%29.jpeg)
-![Sección 4 - imagen 4](docs/Compose/Seccion4/WhatsApp%20Image%202026-09-27%20at%2014.30.47%282%29.jpeg)
-![Sección 4 - imagen 5](docs/Compose/Seccion4/WhatsApp%20Image%202026-09-27%20at%2014.30.47%283%29.jpeg)
+![Sección 4 - imagen 1](docs/Compose/Seccion4/imagen_1.jpeg)
+![Sección 4 - imagen 2](docs/Compose/Seccion4/imagen_2.jpeg)
+![Sección 4 - imagen 3](docs/Compose/Seccion4/imagen_3.jpeg)
+![Sección 4 - imagen 4](docs/Compose/Seccion4/imagen_4.jpeg)
+![Sección 4 - imagen 5](docs/Compose/Seccion4/imagen_5.jpeg)
 
 #### Sección 5: Información y retroalimentación
 
 Así se ve la sección 5:
 
-![Sección 5 - imagen 1](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.56.jpeg)
-![Sección 5 - imagen 2](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.57.jpeg)
-![Sección 5 - imagen 3](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.57%281%29.jpeg)
-![Sección 5 - imagen 4](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.57%282%29.jpeg)
-![Sección 5 - imagen 5](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.57%283%29.jpeg)
-![Sección 5 - imagen 6](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.57%284%29.jpeg)
-![Sección 5 - imagen 7](docs/Compose/Seccion5/WhatsApp%20Image%202026-09-27%20at%2014.30.57%285%29.jpeg)
+![Sección 5 - imagen 1](docs/Compose/Seccion5/imagen_1.jpeg)
+![Sección 5 - imagen 2](docs/Compose/Seccion5/imagen_2.jpeg)
+![Sección 5 - imagen 3](docs/Compose/Seccion5/imagen_3.jpeg)
+![Sección 5 - imagen 4](docs/Compose/Seccion5/imagen_4.jpeg)
+![Sección 5 - imagen 5](docs/Compose/Seccion5/imagen_5.jpeg)
+![Sección 5 - imagen 6](docs/Compose/Seccion5/imagen_6.jpeg)
+![Sección 5 - imagen 7](docs/Compose/Seccion5/imagen_7.jpeg)
 
 #### Sección 6: Contenedores y estructura
 
 Así se ve la sección 6:
 
-![Sección 6 - imagen 1](docs/Compose/Seccion6/WhatsApp%20Image%202026-09-27%20at%2014.31.06.jpeg)
-![Sección 6 - imagen 2](docs/Compose/Seccion6/WhatsApp%20Image%202026-09-27%20at%2014.31.06%281%29.jpeg)
-![Sección 6 - imagen 3](docs/Compose/Seccion6/WhatsApp%20Image%202026-09-27%20at%2014.31.06%282%29.jpeg)
+![Sección 6 - imagen 1](docs/Compose/Seccion6/imagen_1.jpeg)
+![Sección 6 - imagen 2](docs/Compose/Seccion6/imagen_2.jpeg)
+![Sección 6 - imagen 3](docs/Compose/Seccion6/imagen_3.jpeg)
 
 
 ### Versión Flutter
