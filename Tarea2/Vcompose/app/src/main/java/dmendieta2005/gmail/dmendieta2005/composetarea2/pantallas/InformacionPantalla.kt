@@ -3,7 +3,6 @@ package dmendieta2005.gmail.dmendieta2005.composetarea2.pantallas
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -14,11 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Notifications
@@ -52,7 +48,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -60,8 +55,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import dmendieta2005.gmail.dmendieta2005.composetarea2.R
 import dmendieta2005.gmail.dmendieta2005.composetarea2.datos.DatosCompartidos
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,8 +75,10 @@ fun InformacionPantalla() {
     val nombre = DatosCompartidos.nombreUsuario.value
     val notificaciones = DatosCompartidos.notificacionesActivas.value
     val seleccionado = DatosCompartidos.elementoSeleccionado.value
+    val cantidadElementos = DatosCompartidos.elementosAgregados.size
 
     LaunchedEffect(notificaciones) {
+        delay(300)
         if (notificaciones) {
             hostSnackbar.showSnackbar("Notificaciones activas: recibirás avisos")
         }
@@ -155,7 +152,7 @@ fun InformacionPantalla() {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text("Imagen local (fitCenter)", style = MaterialTheme.typography.bodyMedium)
                 Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                    painter = painterResource(id = android.R.drawable.ic_menu_gallery),
                     contentDescription = "Imagen local de ejemplo",
                     contentScale = ContentScale.Fit,
                     modifier = Modifier
@@ -175,7 +172,7 @@ fun InformacionPantalla() {
         }
 
         BloqueDocumentado(
-            titulo = "3. Indicadores de progreso (conexión con Sección 2)",
+            titulo = "3. Indicadores de progreso",
             descripcion = "El progreso determinado muestra un porcentaje específico y " +
                     "avanza con cada acción de la Sección 2. El indeterminado indica " +
                     "que hay una operación en curso sin conocer el tiempo restante."
@@ -183,7 +180,7 @@ fun InformacionPantalla() {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Text("Progreso global: $progreso%")
                 LinearProgressIndicator(
-                    progress = { progreso / 100f },
+                    progress = { (progreso / 100f).coerceIn(0f, 1f) },
                     modifier = Modifier.fillMaxWidth()
                 )
                 Text("Progreso lineal indeterminado")
@@ -195,7 +192,9 @@ fun InformacionPantalla() {
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text("Circular determinado", style = MaterialTheme.typography.labelSmall)
-                        CircularProgressIndicator(progress = { progreso / 100f })
+                        CircularProgressIndicator(
+                            progress = { (progreso / 100f).coerceIn(0f, 1f) }
+                        )
                     }
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text("Circular indeterminado", style = MaterialTheme.typography.labelSmall)
@@ -206,7 +205,7 @@ fun InformacionPantalla() {
         }
 
         BloqueDocumentado(
-            titulo = "4. Tarjeta personalizada (conexión con Sección 1 y 4)",
+            titulo = "4. Tarjeta con datos compartidos",
             descripcion = "Esta tarjeta muestra el nombre escrito en la Sección 1 y el " +
                     "elemento seleccionado en la Sección 4. El badge numérico indica " +
                     "cuántos elementos hay en la lista compartida."
@@ -228,7 +227,7 @@ fun InformacionPantalla() {
                         BadgedBox(
                             badge = {
                                 Badge {
-                                    Text(DatosCompartidos.elementosAgregados.size.toString())
+                                    Text(cantidadElementos.toString())
                                 }
                             }
                         ) {
@@ -240,6 +239,7 @@ fun InformacionPantalla() {
                     }
                     Spacer(Modifier.height(8.dp))
                     Text("Nombre escrito: ${if (nombre.isBlank()) "sin definir" else nombre}")
+                    Spacer(Modifier.height(4.dp))
                     Text("Elemento seleccionado: ${if (seleccionado.isBlank()) "ninguno" else seleccionado}")
                     Spacer(Modifier.height(8.dp))
                     HorizontalDivider()
@@ -308,7 +308,7 @@ fun InformacionPantalla() {
         }
 
         BloqueDocumentado(
-            titulo = "7. Hoja inferior (bottom sheet)",
+            titulo = "7. Hoja inferior",
             descripcion = "Panel que sube desde la parte inferior y ofrece opciones " +
                     "relacionadas con la pantalla. Es menos intrusivo que un diálogo y " +
                     "más rápido que navegar a otra pantalla."
