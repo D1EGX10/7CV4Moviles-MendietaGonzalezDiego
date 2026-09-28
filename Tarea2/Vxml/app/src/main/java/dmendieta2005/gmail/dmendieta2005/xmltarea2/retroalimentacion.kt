@@ -7,18 +7,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import dmendieta2005.gmail.dmendieta2005.xmltarea2.datos.DatosCompartidos
 
 class InformacionFragment : Fragment() {
 
     private lateinit var progresoLinealDet: ProgressBar
     private lateinit var progresoCircularDet: ProgressBar
-    private var progresoActual = 30
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +32,6 @@ class InformacionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // ---- Referencias ----
         progresoLinealDet = view.findViewById(R.id.progreso_lineal_det)
         progresoCircularDet = view.findViewById(R.id.progreso_circular_det)
 
@@ -42,26 +42,47 @@ class InformacionFragment : Fragment() {
         val btnDialogo = view.findViewById<Button>(R.id.btn_dialogo)
         val btnBottomSheet = view.findViewById<Button>(R.id.btn_bottom_sheet)
 
-        // ---- Imagen desde URL con Glide ----
+        val txtNombre = view.findViewById<TextView>(R.id.txtNombreCompartido)
+        val txtElemento = view.findViewById<TextView>(R.id.txtElementoCompartido)
+        val txtProgreso = view.findViewById<TextView>(R.id.txtProgresoCompartido)
+        val txtNotificaciones = view.findViewById<TextView>(R.id.txtNotificacionesCompartido)
+
         Glide.with(this)
             .load("https://picsum.photos/800/400")
             .placeholder(android.R.drawable.ic_menu_gallery)
             .error(android.R.drawable.ic_delete)
             .into(imgUrl)
 
-        // ---- Simulación de progreso ----
+        DatosCompartidos.nombreUsuario.observe(viewLifecycleOwner) { nombre ->
+            val texto = if (nombre.isNullOrBlank()) getString(R.string.sec5_sin_definir) else nombre
+            txtNombre.text = "${getString(R.string.sec5_nombre_label)} $texto"
+        }
+
+        DatosCompartidos.elementoSeleccionado.observe(viewLifecycleOwner) { elemento ->
+            val texto = if (elemento.isNullOrBlank()) getString(R.string.sec5_ninguno) else elemento
+            txtElemento.text = "${getString(R.string.sec5_elemento_label)} $texto"
+        }
+
+        DatosCompartidos.progresoGlobal.observe(viewLifecycleOwner) { progreso ->
+            txtProgreso.text = "${getString(R.string.sec5_progreso_label)} $progreso%"
+            progresoLinealDet.progress = progreso.coerceAtMost(100)
+            progresoCircularDet.progress = progreso.coerceAtMost(100)
+        }
+
+        DatosCompartidos.notificacionesActivas.observe(viewLifecycleOwner) { activas ->
+            val texto = if (activas) getString(R.string.sec5_activadas) else getString(R.string.sec5_desactivadas)
+            txtNotificaciones.text = "${getString(R.string.sec5_notificaciones_label)} $texto"
+        }
+
         btnSimular.setOnClickListener {
-            progresoActual = (progresoActual + 15) % 120
-            progresoLinealDet.progress = progresoActual.coerceAtMost(100)
-            progresoCircularDet.progress = progresoActual.coerceAtMost(100)
+            DatosCompartidos.avanzarProgreso()
             Toast.makeText(
                 requireContext(),
-                "Progreso: ${progresoActual.coerceAtMost(100)}%",
+                "Progreso: ${DatosCompartidos.progresoGlobal.value}%",
                 Toast.LENGTH_SHORT
             ).show()
         }
 
-        // ---- Toast ----
         btnToast.setOnClickListener {
             Toast.makeText(
                 requireContext(),
@@ -70,7 +91,6 @@ class InformacionFragment : Fragment() {
             ).show()
         }
 
-        // ---- Snackbar con acción ----
         btnSnackbar.setOnClickListener {
             Snackbar.make(it, R.string.sec5_snackbar_texto, Snackbar.LENGTH_LONG)
                 .setAction(R.string.sec5_snackbar_accion) {
@@ -83,7 +103,6 @@ class InformacionFragment : Fragment() {
                 .show()
         }
 
-        // ---- Diálogo de confirmación ----
         btnDialogo.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(R.string.sec5_dialogo_titulo)
@@ -101,7 +120,6 @@ class InformacionFragment : Fragment() {
                 .show()
         }
 
-        // ---- Bottom sheet ----
         btnBottomSheet.setOnClickListener {
             val sheetDialog = BottomSheetDialog(requireContext())
             val sheetView = layoutInflater.inflate(

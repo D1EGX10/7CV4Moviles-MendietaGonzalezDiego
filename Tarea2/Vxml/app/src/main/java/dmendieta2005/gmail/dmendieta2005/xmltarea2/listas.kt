@@ -15,6 +15,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dmendieta2005.gmail.dmendieta2005.xmltarea2.datos.DatosCompartidos
 
 class listas : Fragment() {
 
@@ -35,18 +36,37 @@ class listas : Fragment() {
 
         generarDatosLista()
         listaAdapter = ListaAdapter(itemsLista) { item ->
+            DatosCompartidos.establecerElementoSeleccionado(item.texto)
             Toast.makeText(requireContext(), getString(R.string.item_clic, item.texto), Toast.LENGTH_SHORT).show()
         }
         rvListaCompleja.layoutManager = LinearLayoutManager(requireContext())
         rvListaCompleja.adapter = listaAdapter
+
+        DatosCompartidos.elementosAgregados.observe(viewLifecycleOwner) { agregados ->
+            itemsLista.clear()
+            if (agregados.isNotEmpty()) {
+                itemsLista.add(ElementoLista(true, getString(R.string.titulo_agregados_otras)))
+                agregados.forEach { texto ->
+                    itemsLista.add(ElementoLista(false, texto))
+                }
+            }
+            itemsLista.add(ElementoLista(true, getString(R.string.titulo_categoria_principal)))
+            for (i in 1..7) itemsLista.add(ElementoLista(false, "Elemento $i"))
+            itemsLista.add(ElementoLista(true, getString(R.string.titulo_categoria_secundaria)))
+            for (i in 8..15) itemsLista.add(ElementoLista(false, "Elemento $i"))
+            listaAdapter.notifyDataSetChanged()
+            verificarEstadoVacio()
+        }
 
         val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder) = false
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
                 if (!itemsLista[position].esEncabezado) {
+                    val eliminado = itemsLista[position].texto
                     itemsLista.removeAt(position)
                     listaAdapter.notifyItemRemoved(position)
+                    DatosCompartidos.eliminarElemento(eliminado)
                     verificarEstadoVacio()
                     Toast.makeText(requireContext(), getString(R.string.item_eliminado), Toast.LENGTH_SHORT).show()
                 } else {
@@ -82,9 +102,16 @@ class listas : Fragment() {
 
     private fun generarDatosLista() {
         itemsLista.clear()
-        itemsLista.add(ElementoLista(true, "Categoría Principal"))
+        val agregados = DatosCompartidos.elementosAgregados.value ?: mutableListOf()
+        if (agregados.isNotEmpty()) {
+            itemsLista.add(ElementoLista(true, getString(R.string.titulo_agregados_otras)))
+            agregados.forEach { texto ->
+                itemsLista.add(ElementoLista(false, texto))
+            }
+        }
+        itemsLista.add(ElementoLista(true, getString(R.string.titulo_categoria_principal)))
         for (i in 1..7) itemsLista.add(ElementoLista(false, "Elemento $i"))
-        itemsLista.add(ElementoLista(true, "Categoría Secundaria"))
+        itemsLista.add(ElementoLista(true, getString(R.string.titulo_categoria_secundaria)))
         for (i in 8..15) itemsLista.add(ElementoLista(false, "Elemento $i"))
     }
 

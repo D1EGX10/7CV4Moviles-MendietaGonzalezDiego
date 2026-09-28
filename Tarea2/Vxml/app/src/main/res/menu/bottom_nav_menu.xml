@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/entradadetexto" android:title="Texto" />
-    <item android:id="@+id/botones" android:title="Botones" />
-    <item android:id="@+id/seleccion" android:title="Selección" />
-    <item android:id="@+id/listas" android:title="Listas" />
-    <item android:id="@+id/retroalimentacion" android:title="Feedback" />
-    <item android:id="@+id/estructura" android:title="Layouts" />
+    <item
+        android:id="@+id/entradadetexto"
+        android:title="Texto"
+        android:icon="@android:drawable/ic_menu_edit" />
+    <item
+        android:id="@+id/botones"
+        android:title="Botones"
+        android:icon="@android:drawable/ic_menu_add" />
+    <item
+        android:id="@+id/seleccion"
+        android:title="Selección"
+        android:icon="@android:drawable/ic_menu_agenda" />
+    <item
+        android:id="@+id/listas"
+        android:title="Listas"
+        android:icon="@android:drawable/ic_menu_sort_by_size" />
+    <item
+        android:id="@+id/retroalimentacion"
+        android:title="Feedback"
+        android:icon="@android:drawable/ic_menu_info_details" />
+    <item
+        android:id="@+id/estructura"
+        android:title="Layouts"
+        android:icon="@android:drawable/ic_menu_gallery" />
 </menu>

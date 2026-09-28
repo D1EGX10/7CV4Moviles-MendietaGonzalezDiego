@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import dmendieta2005.gmail.dmendieta2005.xmltarea2.datos.DatosCompartidos
 
 class ContenedoresFragment : Fragment() {
 
@@ -58,5 +61,26 @@ class ContenedoresFragment : Fragment() {
             listaDesplazable.addView(elemento)
             listaDesplazable.addView(separador)
         }
+
+        val cajaSuperior = vista.findViewById<View>(R.id.caja_superior)
+        val cajaInferior = vista.findViewById<View>(R.id.caja_inferior)
+
+        DatosCompartidos.tamanoContenedor.observe(viewLifecycleOwner) { tamano ->
+            val lado = tamano.dp(requireContext())
+            cajaSuperior.layoutParams = FrameLayout.LayoutParams(lado, lado).apply {
+                gravity = android.view.Gravity.TOP or android.view.Gravity.START
+            }
+            cajaInferior.layoutParams = FrameLayout.LayoutParams(lado, lado).apply {
+                gravity = android.view.Gravity.BOTTOM or android.view.Gravity.END
+            }
+        }
+
+        DatosCompartidos.colorContenedor.observe(viewLifecycleOwner) { color ->
+            cajaInferior.setBackgroundColor(color)
+        }
+    }
+
+    private fun Int.dp(context: android.content.Context): Int {
+        return (this * context.resources.displayMetrics.density).toInt()
     }
 }

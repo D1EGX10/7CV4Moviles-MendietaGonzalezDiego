@@ -70,6 +70,7 @@
             android:text="@string/desc_switch"
             android:layout_marginBottom="8dp" />
         <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switchNotificaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/switch_texto"
@@ -87,17 +88,40 @@
             android:text="@string/desc_sliders"
             android:layout_marginBottom="8dp" />
         <com.google.android.material.slider.Slider
+            android:id="@+id/sliderValorUnico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:valueFrom="0.0"
             android:valueTo="100.0"
             android:value="50.0" />
         <com.google.android.material.slider.RangeSlider
+            android:id="@+id/sliderRango"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:valueFrom="0.0"
             android:valueTo="100.0"
             app:values="@array/rango_inicial"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_slider_tamano"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_slider_tamano"
+            android:layout_marginBottom="8dp" />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderTamano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="40.0"
+            android:valueTo="140.0"
+            android:value="80.0"
+            android:stepSize="1.0"
             android:layout_marginBottom="24dp" />
 
         <TextView
@@ -177,6 +201,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/chip_3" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_chips_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_chips_color"
+            android:layout_marginBottom="8dp" />
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            android:layout_marginBottom="24dp">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipRojo"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chip_color_rojo" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAzul"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chip_color_azul" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipVerde"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chip_color_verde" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMorado"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chip_color_morado" />
         </com.google.android.material.chip.ChipGroup>
 
     </LinearLayout>

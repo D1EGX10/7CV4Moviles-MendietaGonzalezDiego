@@ -9,8 +9,11 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import dmendieta2005.gmail.dmendieta2005.xmltarea2.datos.DatosCompartidos
 
 class botones : Fragment() {
+
+    private var contadorRapido = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,6 +63,27 @@ class botones : Fragment() {
                 btnCarga.text = getString(R.string.btn_carga)
                 btnCarga.isEnabled = true
             }, 2000)
+        }
+
+        view.findViewById<MaterialButton>(R.id.btnAgregarRapido).setOnClickListener {
+            contadorRapido++
+            val nuevo = "Elemento rápido $contadorRapido"
+            DatosCompartidos.agregarElemento(nuevo)
+            Toast.makeText(requireContext(), "Agregado: $nuevo", Toast.LENGTH_SHORT).show()
+        }
+
+        view.findViewById<MaterialButton>(R.id.btnAvanzarProgreso).setOnClickListener {
+            DatosCompartidos.avanzarProgreso()
+            Toast.makeText(
+                requireContext(),
+                "Progreso: ${DatosCompartidos.progresoGlobal.value}%",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        view.findViewById<MaterialButton>(R.id.btnLimpiarLista).setOnClickListener {
+            DatosCompartidos.limpiarLista()
+            Toast.makeText(requireContext(), "Lista vaciada", Toast.LENGTH_SHORT).show()
         }
 
         return view

@@ -190,4 +190,45 @@
     <string name="sec6_accion_ayuda">Ayuda</string>
     <string name="sec6_accion_ajustes">Ajustes</string>
     <string name="sec6_accion_compartir">Compartir</string>
+
+    <string name="titulo_conexion_seccion4">7. Conexión con la Sección 4</string>
+    <string name="desc_conexion_seccion4">El nombre escrito arriba se agrega a la lista de la Sección 4. Ejemplo de comunicación entre secciones.</string>
+    <string name="btn_agregar_lista">Agregar a la lista</string>
+    <string name="mensaje_agregado_lista">Elemento agregado a la lista</string>
+    <string name="mensaje_nombre_vacio">Escribe un nombre primero</string>
+    <string name="mensaje_nombre_duplicado">Ese elemento ya existe en la lista</string>
+
+    <string name="titulo_agregados_otras">Agregados desde otras secciones</string>
+    <string name="titulo_categoria_principal">Categoría Principal</string>
+    <string name="titulo_categoria_secundaria">Categoría Secundaria</string>
+
+    <string name="titulo_conexion_seccion4_botones">6. Conexión con la Sección 4</string>
+    <string name="desc_conexion_seccion4_botones">Este botón agrega un elemento rápido a la lista compartida que verás en la Sección 4.</string>
+    <string name="btn_agregar_rapido">Agregar elemento rápido a la lista</string>
+    <string name="titulo_conexion_seccion5_botones">7. Conexión con la Sección 5</string>
+    <string name="desc_conexion_seccion5_botones">Este botón avanza el progreso global que se dibuja en la Sección 5. Cada pulsación suma diez por ciento.</string>
+    <string name="btn_avanzar_progreso">Avanzar progreso global</string>
+    <string name="titulo_limpiar_lista">8. Limpiar lista compartida</string>
+    <string name="desc_limpiar_lista">Elimina todos los elementos agregados desde otras secciones para probar el estado vacío.</string>
+    <string name="btn_limpiar_lista">Limpiar lista compartida</string>
+
+    <string name="titulo_slider_tamano">5. Deslizador de tamaño (conexión con Sección 6)</string>
+    <string name="desc_slider_tamano">Ajusta el tamaño de las cajas de colores de la Sección 6 en tiempo real.</string>
+    <string name="titulo_chips_color">8. Chips de color (conexión con Sección 6)</string>
+    <string name="desc_chips_color">Al seleccionar un color se aplica al contenedor superpuesto de la Sección 6.</string>
+    <string name="chip_color_rojo">Rojo</string>
+    <string name="chip_color_azul">Azul</string>
+    <string name="chip_color_verde">Verde</string>
+    <string name="chip_color_morado">Morado</string>
+
+    <string name="sec5_datos_titulo">8. Datos compartidos entre secciones</string>
+    <string name="sec5_datos_descripcion">Esta tarjeta muestra en tiempo real el nombre escrito en la Sección 1, el progreso avanzado desde la Sección 2, el elemento seleccionado en la Sección 4 y el estado del interruptor de la Sección 3.</string>
+    <string name="sec5_nombre_label">Nombre escrito en Sección 1:</string>
+    <string name="sec5_elemento_label">Elemento seleccionado en Sección 4:</string>
+    <string name="sec5_progreso_label">Progreso global:</string>
+    <string name="sec5_notificaciones_label">Notificaciones:</string>
+    <string name="sec5_sin_definir">sin definir</string>
+    <string name="sec5_ninguno">ninguno</string>
+    <string name="sec5_activadas">activadas</string>
+    <string name="sec5_desactivadas">desactivadas</string>
 </resources>
