@@ -21,7 +21,7 @@ Aplicación móvil que muestra los componentes básicos de una interfaz de usuar
 
 ```
 ├── .idea/     
-├── apk/               Binarios APK de cada versión
+├── apk/               Binarios APK de cada versión(Revisar Readme, por el peso de algunas apk no me fue posible poner el archivo en la carpeta)
 ├── docs/              Capturas de pantalla organizadas por tecnología y sección
 ├── Vcompose/   Versión con Jetpack Compose
 ├── Vflutter/           Versión con Flutter
@@ -194,8 +194,8 @@ Así se ve la sección 6:
 
 Así se ve la pantalla de inicio:
 
-![Inicio 1](docs/Flutter/inicio_1.jpeg)
-![Inicio 2](docs/Flutter/inicio_2.jpeg)
+![Inicio 1](docs/Flutter/imagen_1.jpeg)
+![Inicio 2](docs/Flutter/imagen_2.jpeg)
 
 #### Sección 1: Entrada de texto
 
