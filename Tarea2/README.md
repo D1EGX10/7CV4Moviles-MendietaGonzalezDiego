@@ -128,57 +128,50 @@ flutter run
 
 ### Versión Views y XML
 
-#### Pantalla de inicio
-
-Así se ve la pantalla de inicio:
-
-![Inicio 1](docs/Views/imagen_1.jpeg)
-![Inicio 2](docs/Views/imagen_2.jpeg)
-
 #### Sección 1: Entrada de texto
 
 Así se ve la sección 1:
 
-![Sección 1 - imagen 1](docs/Views/Seccion1/imagen_1.jpeg)
-![Sección 1 - imagen 2](docs/Views/Seccion1/imagen_2.jpeg)
+![Sección 1 - imagen 1](docs/Xml/Seccion1/imagen_1.jpeg)
+![Sección 1 - imagen 2](docs/Xml/Seccion1/imagen_2.jpeg)
 
 #### Sección 2: Botones y acciones
 
 Así se ve la sección 2:
 
-![Sección 2 - imagen 1](docs/Views/Seccion2/imagen_1.jpeg)
-![Sección 2 - imagen 2](docs/Views/Seccion2/imagen_2.jpeg)
+![Sección 2 - imagen 1](docs/Xml/Seccion2/imagen_1.jpeg)
+![Sección 2 - imagen 2](docs/Xml/Seccion2/imagen_2.jpeg)
 
 #### Sección 3: Elementos de selección
 
 Así se ve la sección 3:
 
-![Sección 3 - imagen 1](docs/Views/Seccion3/imagen_1.jpeg)
-![Sección 3 - imagen 2](docs/Views/Seccion3/imagen_2.jpeg)
+![Sección 3 - imagen 1](docs/Xml/Seccion3/imagen_1.jpeg)
+![Sección 3 - imagen 2](docs/Xml/Seccion3/imagen_2.jpeg)
 
 #### Sección 4: Listas y colecciones
 
 Así se ve la sección 4:
 
-![Sección 4 - imagen 1](docs/Views/Seccion4/imagen_1.jpeg)
-![Sección 4 - imagen 2](docs/Views/Seccion4/imagen_2.jpeg)
+![Sección 4 - imagen 1](docs/Xml/Seccion4/imagen_1.jpeg)
+![Sección 4 - imagen 2](docs/Xml/Seccion4/imagen_2.jpeg)
 
 #### Sección 5: Información y retroalimentación
 
 Así se ve la sección 5:
 
-![Sección 5 - imagen 1](docs/Views/Seccion5/imagen_1.jpeg)
-![Sección 5 - imagen 2](docs/Views/Seccion5/imagen_2.jpeg)
-![Sección 5 - imagen 3](docs/Views/Seccion5/imagen_3.jpeg)
-![Sección 5 - imagen 4](docs/Views/Seccion5/imagen_4.jpeg)
+![Sección 5 - imagen 1](docs/Xml/Seccion5/imagen_1.jpeg)
+![Sección 5 - imagen 2](docs/Xml/Seccion5/imagen_2.jpeg)
+![Sección 5 - imagen 3](docs/Xml/Seccion5/imagen_3.jpeg)
+![Sección 5 - imagen 4](docs/Xml/Seccion5/imagen_4.jpeg)
 
 #### Sección 6: Contenedores y estructura
 
 Así se ve la sección 6:
 
-![Sección 6 - imagen 1](docs/Views/Seccion6/imagen_1.jpeg)
-![Sección 6 - imagen 2](docs/Views/Seccion6/imagen_2.jpeg)
-![Sección 6 - imagen 3](docs/Views/Seccion6/imagen_3.jpeg)
+![Sección 6 - imagen 1](docs/Xml/Seccion6/imagen_1.jpeg)
+![Sección 6 - imagen 2](docs/Xml/Seccion6/imagen_2.jpeg)
+![Sección 6 - imagen 3](docs/Xml/Seccion6/imagen_3.jpeg)
 
 ### Versión Jetpack Compose
 
