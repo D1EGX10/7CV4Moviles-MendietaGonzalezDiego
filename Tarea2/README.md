@@ -21,13 +21,21 @@ Aplicación móvil que muestra los componentes básicos de una interfaz de usuar
 
 ```
 ├── .idea/     
-├── apk/               Binarios APK de cada versión(Revisar Readme, por el peso de algunas apk no me fue posible poner el archivo en la carpeta)
+├── apk/                (por el peso de algunos binarios (más de 100 MB), no fue posible incluirlos todos dentro del repositorio. Los APK grandes están disponibles en la sección **Releases** de este repositorio.)
 ├── docs/              Capturas de pantalla organizadas por tecnología y sección
 ├── Vcompose/   Versión con Jetpack Compose
 ├── Vflutter/           Versión con Flutter
 ├── Vxml/           Versión con Xml
 └── README.md          Documento principal
 ```
+
+## Binarios APK
+
+Los APK de cada versión están disponibles en la sección de Releases de este repositorio:
+
+- [APK de Views y XML](https://github.com/D1EGX10/7CV4Moviles-MendietaGonzalezDiego/releases/tag/Tarea2Apk)
+- [APK de Flutter](https://github.com/D1EGX10/7CV4Moviles-MendietaGonzalezDiego/releases/tag/Tarea2Apk)
+- [APK de Jetpack Compose](https://github.com/D1EGX10/7CV4Moviles-MendietaGonzalezDiego/releases/tag/Tarea2Apk)
 
 ## Secciones del catálogo
 
@@ -48,12 +56,11 @@ Cada versión implementa varias conexiones que vinculan las secciones entre sí,
 
 ### Versión Views y XML
 
-(Pendiente)
+Abrir la carpeta `Vxml/` desde Android Studio y ejecutar la configuración del módulo `app` sobre un dispositivo o emulador con Android 7.0 (API 24) o superior.
 
 ### Versión Jetpack Compose
 
 Abrir la carpeta `Vcompose/` desde Android Studio y ejecutar la configuración del módulo `app` sobre un dispositivo o emulador con Android 7.0 (API 24) o superior.
-
 
 ### Versión Flutter
 
@@ -121,7 +128,57 @@ flutter run
 
 ### Versión Views y XML
 
-(Pendiente)
+#### Pantalla de inicio
+
+Así se ve la pantalla de inicio:
+
+![Inicio 1](docs/Views/imagen_1.jpeg)
+![Inicio 2](docs/Views/imagen_2.jpeg)
+
+#### Sección 1: Entrada de texto
+
+Así se ve la sección 1:
+
+![Sección 1 - imagen 1](docs/Views/Seccion1/imagen_1.jpeg)
+![Sección 1 - imagen 2](docs/Views/Seccion1/imagen_2.jpeg)
+
+#### Sección 2: Botones y acciones
+
+Así se ve la sección 2:
+
+![Sección 2 - imagen 1](docs/Views/Seccion2/imagen_1.jpeg)
+![Sección 2 - imagen 2](docs/Views/Seccion2/imagen_2.jpeg)
+
+#### Sección 3: Elementos de selección
+
+Así se ve la sección 3:
+
+![Sección 3 - imagen 1](docs/Views/Seccion3/imagen_1.jpeg)
+![Sección 3 - imagen 2](docs/Views/Seccion3/imagen_2.jpeg)
+
+#### Sección 4: Listas y colecciones
+
+Así se ve la sección 4:
+
+![Sección 4 - imagen 1](docs/Views/Seccion4/imagen_1.jpeg)
+![Sección 4 - imagen 2](docs/Views/Seccion4/imagen_2.jpeg)
+
+#### Sección 5: Información y retroalimentación
+
+Así se ve la sección 5:
+
+![Sección 5 - imagen 1](docs/Views/Seccion5/imagen_1.jpeg)
+![Sección 5 - imagen 2](docs/Views/Seccion5/imagen_2.jpeg)
+![Sección 5 - imagen 3](docs/Views/Seccion5/imagen_3.jpeg)
+![Sección 5 - imagen 4](docs/Views/Seccion5/imagen_4.jpeg)
+
+#### Sección 6: Contenedores y estructura
+
+Así se ve la sección 6:
+
+![Sección 6 - imagen 1](docs/Views/Seccion6/imagen_1.jpeg)
+![Sección 6 - imagen 2](docs/Views/Seccion6/imagen_2.jpeg)
+![Sección 6 - imagen 3](docs/Views/Seccion6/imagen_3.jpeg)
 
 ### Versión Jetpack Compose
 
@@ -248,6 +305,70 @@ Así se ve la sección 6:
 ![Sección 6 - imagen 3](docs/Flutter/Seccion6/imagen_3.jpeg)
 
 ## Reflexión final
+
+### Sobre Views y XML
+
+Construir la interfaz con Views y XML fue el enfoque más laborioso de los tres. Cada pantalla requirió su propio archivo de layout en XML, más una clase Fragment o Activity en Kotlin, y en varios casos adaptadores separados para las listas. El código quedó repartido entre muchos archivos pequeños, lo que dificultó tener una visión completa de una pantalla a simple vista.
+
+La parte más complicada fue la sincronización entre las vistas y los datos. Cada vez que cambiaba un valor compartido había que notificar manualmente al adaptador con `notifyDataSetChanged`, o al `TextView` con `setText`. A diferencia de Compose y Flutter, donde el estado se propaga solo, aquí hay que ser explícito en cada actualización.
+
+El manejo de la lista compartida requirió usar `LiveData` y observar los cambios desde el Fragment con `viewLifecycleOwner`. Una vez montado el patrón, funcionó bien, pero tomó más código que en las otras tecnologías. También hubo que tener cuidado con el ciclo de vida: si el Fragment se destruye mientras un observer está activo, puede causar fugas de memoria.
+
+Otra dificultad fue la navegación. Hubo un problema con los ids del `nav_graph` que no coincidían con los del menú inferior, y la app se quedaba atorada en la primera sección. Se resolvió estandarizando todos los ids y forzando una reinstalación limpia con `Clean Project` y `Rebuild Project`.
+
+El tema claro y oscuro se manejó de forma nativa con `values/themes.xml` y `values-night/themes.xml`. Fue el sistema más sencillo de los tres porque Android lo maneja automáticamente si se usan colores de tema en lugar de colores fijos.
+
+En cuanto a legibilidad, el código XML es muy claro para describir la estructura de una pantalla. Sin embargo, la lógica en Kotlin queda dispersa entre `findViewById`, listeners y adaptadores. Es un enfoque más verboso que Compose y Flutter.
+
+Preferiría trabajar con Views solo si heredara un proyecto existente o si tuviera que mantener una aplicación antigua. Para proyectos nuevos elegiría Compose o Flutter.
+
+### Sobre Jetpack Compose
+
+Construir la interfaz con Jetpack Compose resultó muy distinto a trabajar con layouts XML. El código quedó concentrado en archivos pequeños, cada pantalla en una sola función composable que describe su estructura de arriba hacia abajo. No hubo que crear adaptadores ni archivos de layout separados.
+
+La parte más cómoda fue el manejo de estado. Con `mutableStateOf` y `mutableStateListOf`, cualquier cambio en los datos compartidos se reflejó automáticamente en las pantallas que los leían, sin necesidad de notificar adaptadores ni recargar vistas. Esto simplificó enormemente las conexiones entre secciones: las seis quedaron enlazadas sin escribir una sola línea de comunicación manual.
+
+La dificultad principal fue la gestión de dependencias. Hubo varios conflictos entre versiones del BOM de Compose, la librería de navegación, los íconos y Coil. Cada incompatibilidad generaba errores en cascada que no señalaban la causa real. Se resolvió fijando versiones estables y usando el BOM para que este controlara las versiones internas.
+
+Otra dificultad fue el manejo de permisos. El permiso `INTERNET` en el manifiesto es indispensable para cargar imágenes desde URL, y sin él la aplicación se cierra en lugar de mostrar un error visible, lo que dificulta el diagnóstico.
+
+En cuanto a legibilidad, Compose genera código muy claro. Una función por pantalla, componentes reutilizables como `BloqueDocumentado` y `EncabezadoSeccion`, y cero código repetido en los layouts. Es, sin duda, el código más limpio de las tres versiones.
+
+Sobre la velocidad de construcción, una vez superada la configuración inicial de dependencias, el desarrollo fue muy rápido. Cada elemento nuevo se agregaba con una sola función y sin crear archivos adicionales. En ese sentido resultó más ágil que Views.
+
+Preferiría trabajar con Jetpack Compose en proyectos futuros, porque el modelo declarativo encaja mejor con la forma en que pienso las interfaces y porque el código es más fácil de mantener y de leer.
+
+### Sobre Flutter
+
+Flutter fue la tecnología más rápida de configurar. El comando `flutter create` generó todo el proyecto listo para correr, sin tener que pelear con versiones de Gradle ni SDKs. La curva de aprendizaje fue suave porque el modelo de widgets es muy similar al de Compose: todo es un widget, todo se compone en árboles, y el estado se maneja con `setState` o con `ValueNotifier`.
+
+La parte más cómoda fue que el mismo código funciona en Android e iOS sin cambios. También fue muy útil el hot reload: al guardar un archivo, la app en el celular se actualizaba en menos de un segundo sin reiniciar. Eso aceleró mucho la iteración, sobre todo en las secciones más visuales como la de listas y la de contenedores.
+
+La dificultad principal fue el manejo de estado compartido entre secciones. Compose tiene `mutableStateListOf` que recompone solo, pero en Flutter tuve que usar `ValueNotifier` y `ValueListenableBuilder` para lograr el mismo efecto. Una vez entendido el patrón, funcionó bien, pero requirió más código repetido que en Compose.
+
+Otra dificultad fue la curva inicial del lenguaje Dart. Aunque es similar a Kotlin, tiene detalles propios como los constructores `const`, el uso de `late`, las listas por comprensión y la forma en que se manejan los null safety. Una vez que uno se acostumbra, se vuelve natural.
+
+En cuanto a legibilidad, el código de Flutter es muy claro pero más verboso que Compose. Cada widget requiere un `child:` o `children:` explícito, y el anidamiento puede volverse profundo si no se separan bien los componentes. En este proyecto se manejó bien gracias a los reutilizables `BloqueDocumentado` y `EncabezadoSeccion`.
+
+Sobre la velocidad de construcción, una vez montado el proyecto fue muy ágil gracias al hot reload. El único punto lento fue la primera compilación para Android, que tardó varios minutos porque tuvo que descargar Gradle y todas las dependencias.
+
+Preferiría trabajar con Flutter si necesito una sola base de código para Android e iOS a la vez, porque el ahorro de esfuerzo es enorme. Para proyectos exclusivamente Android preferiría Compose, pero Flutter es una alternativa muy sólida.
+
+### Comparación general
+
+Las tres tecnologías permiten construir el mismo catálogo, pero cada una tiene un enfoque distinto:
+
+**Velocidad de configuración inicial.** Flutter fue la más rápida: un solo comando y el proyecto está listo. Compose requiere configurar Gradle, dependencias y versiones del BOM. Views fue la más lenta porque exige crear layouts XML, adaptadores y clases de datos por separado.
+
+**Velocidad de desarrollo.** Compose y Flutter fueron las más ágiles una vez configuradas. Compose gana ligeramente porque cada pantalla vive en una sola función y el estado se propaga solo. Flutter compensa con el hot reload, que hace la iteración casi instantánea. Views es el más lento de los tres porque cada cambio visual implica tocar dos archivos.
+
+**Legibilidad del código.** Compose genera el código más limpio. Flutter es claro pero más verboso. Views es el más disperso porque obliga a saltar entre XML y Kotlin.
+
+**Manejo de estado compartido.** Compose lo resuelve de forma nativa con `mutableStateOf` y `mutableStateListOf`. Flutter requiere `ValueNotifier` y `ValueListenableBuilder`. Views necesita `LiveData`, `ViewModel` u `Observer` con más código repetido.
+
+**Tema claro y oscuro.** Views lo maneja automáticamente con `values-night`. Compose también con `isSystemInDarkTheme()`. Flutter lo hace con `ThemeMode.system`. Las tres cumplen sin mayor problema.
+
+**Preferencia personal.** Para proyectos exclusivamente Android, Compose es la mejor opción por su modelo declarativo y su integración nativa. Para proyectos que necesiten cubrir Android e iOS, Flutter es la elección más eficiente. Views quedaría como última opción, salvo que se herede un proyecto antiguo que ya lo use.
 
 ## Referencias consultadas
 
