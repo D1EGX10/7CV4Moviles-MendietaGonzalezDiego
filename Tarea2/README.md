@@ -54,63 +54,68 @@ Cada versión implementa varias conexiones que vinculan las secciones entre sí,
 
 Abrir la carpeta `Vcompose/` desde Android Studio y ejecutar la configuración del módulo `app` sobre un dispositivo o emulador con Android 7.0 (API 24) o superior.
 
-El APK...
-
 
 ### Versión Flutter
 
-(Pendiente)
+Abrir la carpeta `Vflutter/` desde Android Studio o Visual Studio Code. Requiere tener instalado Flutter SDK 3.x y Dart 3.x.
+
+Para ejecutar en un dispositivo o emulador Android:
+
+```bash
+cd Vflutter
+flutter pub get
+flutter run
+```
 
 ## Tabla de equivalencias
 
 | Elemento | Views / XML | Jetpack Compose | Flutter |
 |---|---|---|---|
-| Campo de texto simple | `TextInputLayout` + `TextInputEditText` | `OutlinedTextField` | _(Pendiente)_ |
-| Campo con validación | `TextInputLayout` con `app:errorEnabled` | `OutlinedTextField` con `isError` | _(Pendiente)_ |
-| Campo de contraseña | `TextInputEditText` con `inputType=textPassword` | `OutlinedTextField` con `PasswordVisualTransformation` | _(Pendiente)_ |
-| Teclado específico | `android:inputType` | `KeyboardOptions(keyboardType = ...)` | _(Pendiente)_ |
-| Campo multilínea | `TextInputEditText` con `inputType=textMultiLine` | `OutlinedTextField` con `minLines` | _(Pendiente)_ |
-| Desplegable de opciones | `AutoCompleteTextView` / `Spinner` | `ExposedDropdownMenuBox` | _(Pendiente)_ |
-| Barra de búsqueda | `SearchView` / `TextInputLayout` | `OutlinedTextField` con `leadingIcon` | _(Pendiente)_ |
-| Botón relleno | `MaterialButton` | `Button` | _(Pendiente)_ |
-| Botón contorno | `MaterialButton` con estilo Outlined | `OutlinedButton` | _(Pendiente)_ |
-| Botón de texto | `MaterialButton` con estilo Text | `TextButton` | _(Pendiente)_ |
-| Botón con ícono | `MaterialButton` con `app:icon` | `Button` con `Icon` + `Text` | _(Pendiente)_ |
-| Botón flotante | `FloatingActionButton` | `FloatingActionButton` | _(Pendiente)_ |
-| Botón flotante extendido | `ExtendedFloatingActionButton` | `ExtendedFloatingActionButton` | _(Pendiente)_ |
-| Alternancia / segmentado | `MaterialButtonToggleGroup` | `SingleChoiceSegmentedButtonRow` | _(Pendiente)_ |
-| Casilla de verificación | `MaterialCheckBox` | `Checkbox` / `TriStateCheckbox` | _(Pendiente)_ |
-| Botón de opción | `MaterialRadioButton` | `RadioButton` | _(Pendiente)_ |
-| Interruptor | `MaterialSwitch` | `Switch` | _(Pendiente)_ |
-| Deslizador | `Slider` | `Slider` / `RangeSlider` | _(Pendiente)_ |
-| Lista desplegable | `Spinner` | `ExposedDropdownMenuBox` | _(Pendiente)_ |
-| Selector de fecha | `MaterialDatePicker` | `DatePickerDialog` | _(Pendiente)_ |
-| Selector de hora | `MaterialTimePicker` | `TimePicker` | _(Pendiente)_ |
-| Chips de filtro | `Chip` / `FilterChip` | `FilterChip` | _(Pendiente)_ |
-| Lista vertical | `RecyclerView` | `LazyColumn` | _(Pendiente)_ |
-| Cuadrícula | `RecyclerView` con `GridLayoutManager` | `LazyVerticalGrid` | _(Pendiente)_ |
-| Encabezados en lista | `RecyclerView` con múltiples tipos de vista | `item { }` dentro de `LazyColumn` | _(Pendiente)_ |
-| Deslizar para eliminar | `ItemTouchHelper` | `SwipeToDismissBox` | _(Pendiente)_ |
-| Actualizar la lista | `SwipeRefreshLayout` | Botón de actualizar | _(Pendiente)_ |
-| Estado vacío | `LinearLayout` centrado | `Box` centrado con `Column` | _(Pendiente)_ |
-| Pestañas | `TabLayout` + `ViewPager2` | `TabRow` + `HorizontalPager` | _(Pendiente)_ |
-| Progreso lineal | `LinearProgressIndicator` | `LinearProgressIndicator` | _(Pendiente)_ |
-| Progreso circular | `CircularProgressIndicator` | `CircularProgressIndicator` | _(Pendiente)_ |
-| Toast | `Toast` | `Toast` | _(Pendiente)_ |
-| Snackbar | `Snackbar` | `SnackbarHostState` | _(Pendiente)_ |
-| Diálogo de confirmación | `MaterialAlertDialogBuilder` | `AlertDialog` | _(Pendiente)_ |
-| Hoja inferior | `BottomSheetDialog` | `ModalBottomSheet` | _(Pendiente)_ |
-| Tarjeta | `MaterialCardView` | `Card` | _(Pendiente)_ |
-| Separador | `View` con altura 1dp | `HorizontalDivider` | _(Pendiente)_ |
-| Badge | `BadgeView` | `BadgedBox` | _(Pendiente)_ |
-| Distribución en fila | `LinearLayout` horizontal | `Row` | _(Pendiente)_ |
-| Distribución en columna | `LinearLayout` vertical | `Column` | _(Pendiente)_ |
-| Distribución superpuesta | `FrameLayout` | `Box` con `align` | _(Pendiente)_ |
-| Desplazamiento vertical | `ScrollView` / `NestedScrollView` | `Modifier.verticalScroll` | _(Pendiente)_ |
-| Barra superior | `MaterialToolbar` | `TopAppBar` | _(Pendiente)_ |
-| Menú lateral | `DrawerLayout` + `NavigationView` | `ModalNavigationDrawer` | _(Pendiente)_ |
-| Pesos proporcionales | `layout_weight` | `Modifier.weight` | _(Pendiente)_ |
-
+| Campo de texto simple | `TextInputLayout` + `TextInputEditText` | `OutlinedTextField` | `TextField` |
+| Campo con validación | `TextInputLayout` con `app:errorEnabled` | `OutlinedTextField` con `isError` | `TextField` con `errorText` |
+| Campo de contraseña | `TextInputEditText` con `inputType=textPassword` | `OutlinedTextField` con `PasswordVisualTransformation` | `TextField` con `obscureText` |
+| Teclado específico | `android:inputType` | `KeyboardOptions(keyboardType = ...)` | `keyboardType: TextInputType` |
+| Campo multilínea | `TextInputEditText` con `inputType=textMultiLine` | `OutlinedTextField` con `minLines` | `TextField` con `maxLines` |
+| Desplegable de opciones | `AutoCompleteTextView` / `Spinner` | `ExposedDropdownMenuBox` | `DropdownButtonFormField` |
+| Barra de búsqueda | `SearchView` / `TextInputLayout` | `OutlinedTextField` con `leadingIcon` | `TextField` con `prefixIcon` |
+| Botón relleno | `MaterialButton` | `Button` | `ElevatedButton` |
+| Botón contorno | `MaterialButton` con estilo Outlined | `OutlinedButton` | `OutlinedButton` |
+| Botón de texto | `MaterialButton` con estilo Text | `TextButton` | `TextButton` |
+| Botón con ícono | `MaterialButton` con `app:icon` | `Button` con `Icon` + `Text` | `ElevatedButton.icon` |
+| Botón flotante | `FloatingActionButton` | `FloatingActionButton` | `FloatingActionButton` |
+| Botón flotante extendido | `ExtendedFloatingActionButton` | `ExtendedFloatingActionButton` | `FloatingActionButton.extended` |
+| Alternancia / segmentado | `MaterialButtonToggleGroup` | `SingleChoiceSegmentedButtonRow` | `SegmentedButton` |
+| Casilla de verificación | `MaterialCheckBox` | `Checkbox` / `TriStateCheckbox` | `Checkbox` / `CheckboxListTile` con `tristate` |
+| Botón de opción | `MaterialRadioButton` | `RadioButton` | `RadioListTile` |
+| Interruptor | `MaterialSwitch` | `Switch` | `Switch` / `SwitchListTile` |
+| Deslizador | `Slider` | `Slider` / `RangeSlider` | `Slider` / `RangeSlider` |
+| Lista desplegable | `Spinner` | `ExposedDropdownMenuBox` | `DropdownButtonFormField` |
+| Selector de fecha | `MaterialDatePicker` | `DatePickerDialog` | `showDatePicker` |
+| Selector de hora | `MaterialTimePicker` | `TimePicker` | `showTimePicker` |
+| Chips de filtro | `Chip` / `FilterChip` | `FilterChip` | `FilterChip` |
+| Lista vertical | `RecyclerView` | `LazyColumn` | `ListView.builder` |
+| Cuadrícula | `RecyclerView` con `GridLayoutManager` | `LazyVerticalGrid` | `GridView.builder` |
+| Encabezados en lista | `RecyclerView` con múltiples tipos de vista | `item { }` dentro de `LazyColumn` | `ListView` con hijos mixtos |
+| Deslizar para eliminar | `ItemTouchHelper` | `SwipeToDismissBox` | `Dismissible` |
+| Actualizar la lista | `SwipeRefreshLayout` | Botón de actualizar | `RefreshIndicator` |
+| Estado vacío | `LinearLayout` centrado | `Box` centrado con `Column` | `Center` con `Column` |
+| Pestañas | `TabLayout` + `ViewPager2` | `TabRow` + `HorizontalPager` | `TabBar` + `TabBarView` |
+| Progreso lineal | `LinearProgressIndicator` | `LinearProgressIndicator` | `LinearProgressIndicator` |
+| Progreso circular | `CircularProgressIndicator` | `CircularProgressIndicator` | `CircularProgressIndicator` |
+| Toast | `Toast` | `Toast` | `SnackBar` |
+| Snackbar | `Snackbar` | `SnackbarHostState` | `SnackBar` con `SnackBarAction` |
+| Diálogo de confirmación | `MaterialAlertDialogBuilder` | `AlertDialog` | `showDialog` + `AlertDialog` |
+| Hoja inferior | `BottomSheetDialog` | `ModalBottomSheet` | `showModalBottomSheet` |
+| Tarjeta | `MaterialCardView` | `Card` | `Card` |
+| Separador | `View` con altura 1dp | `HorizontalDivider` | `Divider` |
+| Badge | `BadgeView` | `BadgedBox` | `Badge` |
+| Distribución en fila | `LinearLayout` horizontal | `Row` | `Row` |
+| Distribución en columna | `LinearLayout` vertical | `Column` | `Column` |
+| Distribución superpuesta | `FrameLayout` | `Box` con `align` | `Stack` |
+| Desplazamiento vertical | `ScrollView` / `NestedScrollView` | `Modifier.verticalScroll` | `ListView` / `SingleChildScrollView` |
+| Barra superior | `MaterialToolbar` | `TopAppBar` | `AppBar` |
+| Menú lateral | `DrawerLayout` + `NavigationView` | `ModalNavigationDrawer` | `Drawer` |
+| Pesos proporcionales | `layout_weight` | `Modifier.weight` | `Expanded` con `flex` |
 
 ## Capturas de pantalla
 
@@ -185,7 +190,62 @@ Así se ve la sección 6:
 
 ### Versión Flutter
 
-(Pendiente)
+#### Pantalla de inicio
+
+Así se ve la pantalla de inicio:
+
+![Inicio 1](docs/Flutter/inicio_1.jpeg)
+![Inicio 2](docs/Flutter/inicio_2.jpeg)
+
+#### Sección 1: Entrada de texto
+
+Así se ve la sección 1:
+
+![Sección 1 - imagen 1](docs/Flutter/Seccion1/imagen_1.jpeg)
+![Sección 1 - imagen 2](docs/Flutter/Seccion1/imagen_2.jpeg)
+![Sección 1 - imagen 3](docs/Flutter/Seccion1/imagen_3.jpeg)
+
+#### Sección 2: Botones y acciones
+
+Así se ve la sección 2:
+
+![Sección 2 - imagen 1](docs/Flutter/Seccion2/imagen_1.jpeg)
+![Sección 2 - imagen 2](docs/Flutter/Seccion2/imagen_2.jpeg)
+![Sección 2 - imagen 3](docs/Flutter/Seccion2/imagen_3.jpeg)
+
+#### Sección 3: Elementos de selección
+
+Así se ve la sección 3:
+
+![Sección 3 - imagen 1](docs/Flutter/Seccion3/imagen_1.jpeg)
+![Sección 3 - imagen 2](docs/Flutter/Seccion3/imagen_2.jpeg)
+![Sección 3 - imagen 3](docs/Flutter/Seccion3/imagen_3.jpeg)
+![Sección 3 - imagen 4](docs/Flutter/Seccion3/imagen_4.jpeg)
+
+#### Sección 4: Listas y colecciones
+
+Así se ve la sección 4:
+
+![Sección 4 - imagen 1](docs/Flutter/Seccion4/imagen_1.jpeg)
+![Sección 4 - imagen 2](docs/Flutter/Seccion4/imagen_2.jpeg)
+![Sección 4 - imagen 3](docs/Flutter/Seccion4/imagen_3.jpeg)
+
+#### Sección 5: Información y retroalimentación
+
+Así se ve la sección 5:
+
+![Sección 5 - imagen 1](docs/Flutter/Seccion5/imagen_1.jpeg)
+![Sección 5 - imagen 2](docs/Flutter/Seccion5/imagen_2.jpeg)
+![Sección 5 - imagen 3](docs/Flutter/Seccion5/imagen_3.jpeg)
+![Sección 5 - imagen 4](docs/Flutter/Seccion5/imagen_4.jpeg)
+
+#### Sección 6: Contenedores y estructura
+
+Así se ve la sección 6:
+
+![Sección 6 - imagen 1](docs/Flutter/Seccion6/imagen_1.jpeg)
+![Sección 6 - imagen 2](docs/Flutter/Seccion6/imagen_2.jpeg)
+![Sección 6 - imagen 3](docs/Flutter/Seccion6/imagen_3.jpeg)
 
 ## Reflexión final
 
@@ -201,6 +261,12 @@ Coil. (2024). *Coil Compose*. https://coil-kt.github.io/coil/compose/
 
 Flutter. (2024). *Flutter documentation*. https://docs.flutter.dev/
 
+Flutter. (2024). *Layouts in Flutter*. https://docs.flutter.dev/ui/layout
+
+Flutter. (2024). *State management*. https://docs.flutter.dev/data-and-backend/state-mgmt/intro
+
 Google. (2024). *Material Design 3*. https://m3.material.io/
 
 Kotlin. (2024). *Kotlin documentation*. https://kotlinlang.org/docs/home.html
+
+pub.dev. (2024). *cached_network_image*. https://pub.dev/packages/cached_network_image
