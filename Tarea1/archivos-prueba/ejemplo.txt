@@ -1,0 +1,2 @@
+Archivo inicial para verificar las herramientas MCP.
+Modificación realizada mediante MCP.
