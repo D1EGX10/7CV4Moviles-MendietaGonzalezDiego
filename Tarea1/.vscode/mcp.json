@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "filesystem": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/d",
+        "/s",
+        "/c",
+        "npx -y @modelcontextprotocol/server-filesystem C:\\MCP-Tarea1\\archivos-prueba"
+      ]
+    }
+  }
+}
